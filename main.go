@@ -55,7 +55,7 @@ func main() {
 
 	fmt.Println()
 	fmt.Println("Done!")
-	fmt.Println("Total time: ", duration)
+	fmt.Println("Total processing time: ", duration)
 
 	err = utils.GetUserInputForClearInputDir(inputDirPath)
 	if err != nil {
