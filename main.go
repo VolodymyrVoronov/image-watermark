@@ -9,8 +9,6 @@ import (
 
 const inputDirPath = "./input"
 
-// const outputDirPath = "./output"
-
 func main() {
 	start := time.Now()
 	watermark := utils.GetWatermark()
