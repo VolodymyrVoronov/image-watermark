@@ -23,16 +23,13 @@ func main() {
 	errorChannels := make([]chan error, len(inputDir))
 
 	for i, entry := range inputDir {
+		doneChannels[i] = make(chan bool, 1)
+		errorChannels[i] = make(chan error, 1)
 
 		if !entry.IsDir() {
 			entryName := entry.Name()
 
-			doneChannel := make(chan bool, 1)
-			errorChannel := make(chan error, 1)
-			doneChannels[i] = doneChannel
-			errorChannels[i] = errorChannel
-
-			go utils.ProcessImage(inputDirPath, entryName, watermark, doneChannel, errorChannel)
+			go utils.ProcessImage(inputDirPath, entryName, watermark, doneChannels[i], errorChannels[i])
 		}
 	}
 
