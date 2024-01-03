@@ -5,10 +5,10 @@
 2. Clone this repository.
 
 3. Copy images, which have to be processed into folder **"input"**.
-	**Acceptable formats "jepg" and "png".**
+- **Acceptable formats "jepg" and "png".**
 
 4. Copy your watermark into folder **"watermark"**.
-	**Acceptable format "png".**
+- **Acceptable format "png".**
 
 5. Run command `go run .`
 
