@@ -1,6 +1,7 @@
 package utils
 
 import (
+	"bufio"
 	"fmt"
 	"image"
 	"image/draw"
@@ -158,6 +159,34 @@ func ClearInputDir(inputDirPath string) error {
 
 	if err != nil {
 		fmt.Println(err)
+	}
+
+	return nil
+}
+
+func GetUserInputForClearInputDir(inputDirPath string) error {
+	scanner := bufio.NewScanner(os.Stdin)
+	fmt.Println()
+	fmt.Print("\x1b[1mClear input directory? (y/n):\x1b[0m ")
+	scanner.Scan()
+	userInput := scanner.Text()
+
+	if userInput == "y" || userInput == "Y" || userInput == "yes" || userInput == "Yes" {
+		err := ClearInputDir(inputDirPath)
+		if err != nil {
+			fmt.Println(err)
+			return err
+		}
+
+		fmt.Println()
+		fmt.Println("Input directory was cleared!")
+	} else if userInput == "n" || userInput == "N" || userInput == "no" || userInput == "No" {
+		fmt.Println()
+		fmt.Println("Input directory was not cleared!")
+	} else {
+		fmt.Println()
+		fmt.Println("Invalid input!")
+		fmt.Println("Exiting...")
 	}
 
 	return nil

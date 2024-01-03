@@ -40,7 +40,7 @@ func main() {
 		select {
 		case done := <-doneChannels[i]:
 			if done {
-				fmt.Println("\x1b[1mImage\x1b[0m \x1b[34m" + inputDir[i].Name() + "\x1b[0m was processed \x1b[32msuccessfully!\x1b[0m")
+				fmt.Println("\x1b[1mFile\x1b[0m \x1b[34m" + inputDir[i].Name() + "\x1b[0m was processed \x1b[32msuccessfully!\x1b[0m")
 			}
 
 		case err := <-errorChannels[i]:
@@ -57,12 +57,9 @@ func main() {
 	fmt.Println("Done!")
 	fmt.Println("Total time: ", duration)
 
-	err = utils.ClearInputDir(inputDirPath)
+	err = utils.GetUserInputForClearInputDir(inputDirPath)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
-
-	fmt.Println()
-	fmt.Println("Input directory was cleared!")
 }
