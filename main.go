@@ -56,4 +56,13 @@ func main() {
 	fmt.Println()
 	fmt.Println("Done!")
 	fmt.Println("Total time: ", duration)
+
+	err = utils.ClearInputDir(inputDirPath)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	fmt.Println()
+	fmt.Println("Input directory was cleared!")
 }

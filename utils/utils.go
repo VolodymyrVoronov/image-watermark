@@ -139,3 +139,26 @@ func ProcessImage(inputDirPath string, entryName string, watermark image.Image, 
 
 	defer result.Close()
 }
+
+func ClearInputDir(inputDirPath string) error {
+	err := filepath.Walk(inputDirPath, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+
+		if !info.IsDir() {
+			err = os.Remove(path)
+			if err != nil {
+				return err
+			}
+		}
+
+		return nil
+	})
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	return nil
+}
