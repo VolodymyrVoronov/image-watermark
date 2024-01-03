@@ -180,9 +180,11 @@ func GetUserInputForClearInputDir(inputDirPath string) error {
 
 		fmt.Println()
 		fmt.Println("Input directory was cleared!")
+		fmt.Println("Exiting...")
 	} else if userInput == "n" || userInput == "N" || userInput == "no" || userInput == "No" {
 		fmt.Println()
 		fmt.Println("Input directory was not cleared!")
+		fmt.Println("Exiting...")
 	} else {
 		fmt.Println()
 		fmt.Println("Invalid input!")
