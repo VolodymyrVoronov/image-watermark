@@ -167,7 +167,7 @@ func ClearInputDir(inputDirPath string) error {
 func GetUserInputForClearInputDir(inputDirPath string) error {
 	scanner := bufio.NewScanner(os.Stdin)
 	fmt.Println()
-	fmt.Print("\x1b[1mClear input directory? (y/n):\x1b[0m ")
+	fmt.Print("Clear input directory? (y/n): ")
 	scanner.Scan()
 	userInput := scanner.Text()
 
