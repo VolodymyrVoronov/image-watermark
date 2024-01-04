@@ -14,4 +14,9 @@
 
 6. Check folder **"output"** after the end of the processing.
 
+------------
+In case the compiled (after running `go build`) program has to be run, create new folders for input, output and watermark in the root directory (where the compiled program is).
+
+------------
+
 Disclaimer: Please note that this project is for demonstrational and educational purposes only.
