@@ -65,4 +65,6 @@ func main() {
 		fmt.Println(err)
 		return
 	}
+
+	time.Sleep(time.Second * 2)
 }
