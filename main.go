@@ -19,6 +19,12 @@ func main() {
 		return
 	}
 
+	if len(inputDir) == 0 {
+		fmt.Println("Input directory is empty!")
+		fmt.Println("Exiting...")
+		return
+	}
+
 	doneChannels := make([]chan bool, len(inputDir))
 	errorChannels := make([]chan error, len(inputDir))
 

@@ -14,14 +14,19 @@ import (
 
 func GetWatermark() image.Image {
 	watermarkDir, err := os.ReadDir("./watermark")
-
 	if err != nil {
 		fmt.Println(err)
 		return nil
 	}
 
 	if len(watermarkDir) == 0 {
-		fmt.Println("Watermark not found")
+		fmt.Println("Watermark not found.")
+		return nil
+	}
+
+	if len(watermarkDir) > 1 {
+		fmt.Println("More than one watermark found.")
+		fmt.Println("Please provide only one watermark.")
 		return nil
 	}
 
