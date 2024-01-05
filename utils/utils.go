@@ -63,7 +63,6 @@ func ProcessImage(inputDirPath string, entryName string, watermark image.Image, 
 	file, err := os.Open(inputDirPath + "/" + entryName)
 	if err != nil {
 		fmt.Println(err)
-
 		errorChannel <- err
 		return
 	}
@@ -72,7 +71,6 @@ func ProcessImage(inputDirPath string, entryName string, watermark image.Image, 
 	format, err := GetImageFormat(entryName)
 	if err != nil {
 		fmt.Println(err)
-
 		errorChannel <- err
 		return
 	}
@@ -83,7 +81,6 @@ func ProcessImage(inputDirPath string, entryName string, watermark image.Image, 
 		decodedImage, err = png.Decode(file)
 		if err != nil {
 			fmt.Println("Error while decoding png: ", err)
-
 			errorChannel <- err
 			return
 		}
@@ -93,7 +90,6 @@ func ProcessImage(inputDirPath string, entryName string, watermark image.Image, 
 		decodedImage, err = jpeg.Decode(file)
 		if err != nil {
 			fmt.Println("Error while decoding jpeg: ", err)
-
 			errorChannel <- err
 			return
 		}
@@ -117,10 +113,8 @@ func ProcessImage(inputDirPath string, entryName string, watermark image.Image, 
 
 	if format == "png" {
 		result, err = os.Create(fmt.Sprintf("./output/%s", entryName))
-
 		if err != nil {
 			fmt.Println(err)
-
 			errorChannel <- err
 			return
 		}
@@ -130,10 +124,8 @@ func ProcessImage(inputDirPath string, entryName string, watermark image.Image, 
 
 	if format == "jpeg" {
 		result, err = os.Create(fmt.Sprintf("./output/%s", entryName))
-
 		if err != nil {
 			fmt.Println(err)
-
 			errorChannel <- err
 			return
 		}
