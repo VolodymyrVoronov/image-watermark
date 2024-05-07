@@ -7,6 +7,7 @@ import (
 	"image/draw"
 	"image/jpeg"
 	"image/png"
+
 	"os"
 	"path/filepath"
 	"strings"
@@ -122,7 +123,7 @@ func ProcessImage(inputDirPath string, entryName string, watermark image.Image, 
 		png.Encode(result, m)
 	}
 
-	if format == "jpeg" {
+	if format == "jpeg" || format == "jpg" {
 		result, err = os.Create(fmt.Sprintf("./output/%s", entryName))
 		if err != nil {
 			fmt.Println(err)

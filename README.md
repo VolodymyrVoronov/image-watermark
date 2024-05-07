@@ -5,7 +5,7 @@
 2. Clone this repository.
 
 3. Copy images, which have to be processed into folder **"input"**.
-- **Acceptable formats "jpeg" and "png".**
+- **Acceptable formats "jpeg", "jpg" and "png".**
 
 4. Copy your watermark into folder **"watermark"**.
 - **Acceptable format "png".**
