@@ -7,7 +7,6 @@ import (
 	"image/draw"
 	"image/jpeg"
 	"image/png"
-
 	"os"
 	"path/filepath"
 	"strings"
