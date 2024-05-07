@@ -86,7 +86,7 @@ func ProcessImage(inputDirPath string, entryName string, watermark image.Image, 
 		}
 	}
 
-	if format == "jpeg" {
+	if format == "jpeg" || format == "jpg" {
 		decodedImage, err = jpeg.Decode(file)
 		if err != nil {
 			fmt.Println("Error while decoding jpeg: ", err)
